@@ -1,6 +1,6 @@
 "use client";
 import { motion } from "framer-motion";
-import { PROJECTS } from "@/data/index.json"; // Assuming your data is in PROJECTS
+import DATA from "@/data"; // Assuming your data is in PROJECTS
 import { FaGithub } from "react-icons/fa"; // Import GitHub icon from react-icons
 
 export default function Projects() {
@@ -62,7 +62,7 @@ export default function Projects() {
         variants={containerVariants}
         className="flex flex-col items-center space-y-8"
       >
-        {PROJECTS.map((project, index) => (
+        {DATA.PROJECTS.map((project, index) => (
           <motion.div
             key={index}
             variants={itemVariants}

@@ -2,7 +2,7 @@
 
 import React, { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
-import { HERO_CONTENT } from "@/data/index.json";
+import  DATA   from "@/data";
 const typingText = "Full Stack Developer";
 import { IconCloud } from "@/registry/magicui/icon-cloud";
 
@@ -96,7 +96,7 @@ const Hero = () => {
               </div>
 
               <p className="text-lg max-w-md text-gray-500 dark:text-gray-300 text-left">
-                {HERO_CONTENT}
+                {DATA.HERO_CONTENT}
               </p>
 
               <div className="w-full flex pt-4 sm:pt-6">
@@ -171,7 +171,7 @@ const Hero = () => {
             </div>
 
             <p className="text-sm sm:text-base md:text-lg max-w-md text-gray-500 dark:text-gray-300 text-center">
-              {HERO_CONTENT}
+              {DATA.HERO_CONTENT}
             </p>
 
             <div className="w-full flex justify-center pt-4 sm:pt-6">

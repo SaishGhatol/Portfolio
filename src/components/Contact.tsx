@@ -1,6 +1,6 @@
 "use client";
 import { motion } from "framer-motion";
-import { CONTACT } from "@/data/index.json";
+import  DATA  from "@/data";
 
 export default function Contact() {
   const containerVariants = {
@@ -56,7 +56,7 @@ export default function Contact() {
           className="my-4 text-neutral-300 hover:text-neutral-100 transition-colors duration-300"
           whileHover={{ x: 5 }}
         >
-          {CONTACT.address}
+          {DATA.CONTACT.address}
         </motion.p>
 
         <motion.p
@@ -64,7 +64,7 @@ export default function Contact() {
           className="my-4 text-neutral-300 hover:text-neutral-100 transition-colors duration-300"
           whileHover={{ x: 5 }}
         >
-          {CONTACT.phoneNo}
+          {DATA.CONTACT.phoneNo}
         </motion.p>
 
         <motion.div
@@ -72,26 +72,26 @@ export default function Contact() {
           variants={containerVariants}
         >
           <motion.a
-            href={`mailto:${CONTACT.email}`}
+            href={`mailto:${DATA.CONTACT.email}`}
             className="text-violet-300 hover:text-violet-200 transition-all duration-300 relative group"
             variants={itemVariants}
             whileHover="hover"
             whileTap="tap"
             transition={{ type: "spring", stiffness: 300 }}
           >
-            {CONTACT.email}
+            {DATA.CONTACT.email}
             <span className="absolute left-0 bottom-0 w-0 h-px bg-violet-400 transition-all duration-300 group-hover:w-full"></span>
           </motion.a>
 
           <motion.a
-            href={`mailto:${CONTACT.email2}`}
+            href={`mailto:${DATA.CONTACT.email2}`}
             className="text-violet-300 hover:text-violet-200 transition-all duration-300 relative group"
             variants={itemVariants}
             whileHover="hover"
             whileTap="tap"
             transition={{ type: "spring", stiffness: 300, delay: 0.1 }}
           >
-            {CONTACT.email2}
+            {DATA.CONTACT.email2}
             <span className="absolute left-0 bottom-0 w-0 h-px bg-violet-400 transition-all duration-300 group-hover:w-full"></span>
           </motion.a>
         </motion.div>
