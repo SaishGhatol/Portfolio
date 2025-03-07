@@ -75,7 +75,7 @@ const Hero = () => {
           </div>
 
           {/* Desktop layout with adjusted gap and alignment */}
-          <div className="hidden lg:flex lg:flex-row items-center w-full gap-8">
+          <div className="hidden lg:flex lg:flex-row items-center w-full gap-8 pl-3">
             {/* Text Content */}
             <div className="w-1/2 flex flex-col items-start space-y-4">
               <h1 className="text-6xl font-bold tracking-tighter text-left text-gray-200 dark:text-white pt-2">
