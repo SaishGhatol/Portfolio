@@ -16,10 +16,10 @@ export default function Contact() {
 
     emailjs
       .sendForm(
-        "service_l43b1pr",         // ✅ Your actual EmailJS service ID
-        "template_u2qagti",       // ✅ Your actual EmailJS template ID
+        "service_l43b1pr",        
+        "template_u2qagti",       
         formRef.current,
-        "0FGi9vbDzABXBBclT"       // ✅ Your actual EmailJS public key
+        "0FGi9vbDzABXBBclT"       
       )
       .then(() => {
         alert("✅ Message sent successfully!");
