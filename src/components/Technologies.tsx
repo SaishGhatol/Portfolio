@@ -1,6 +1,6 @@
 "use client"
 
-import React, { useState,useEffect } from 'react';
+import React, { useState } from 'react';
 import { RiReactjsLine } from 'react-icons/ri';
 import { SiMongodb, SiExpress, SiCplusplus, SiJavascript, SiMysql, SiTypescript, SiTailwindcss, SiFirebase } from 'react-icons/si';
 import { TbBrandNextjs } from 'react-icons/tb';
@@ -11,16 +11,7 @@ import { motion } from 'framer-motion';
 
 const Technologies = () => {
   const [hoveredTech, setHoveredTech] = useState<string | null>(null);
-  const [scrollY, setScrollY] = useState(0);
 
-  useEffect(() => {
-    const handleScroll = () => {
-      setScrollY(window.scrollY);
-    };
-    
-    window.addEventListener("scroll", handleScroll, { passive: true });
-    return () => window.removeEventListener("scroll", handleScroll);
-  }, []);
 
   const categories = {
     "technologies": [

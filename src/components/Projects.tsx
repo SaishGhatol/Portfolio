@@ -8,19 +8,20 @@ import aarogyaImage from "@/assets/images/aarogya.png";
 import chatAppImage from "@/assets/images/ChatApp.png";
 import quizPortalImage from "@/assets/images/QuizPortal.png";
 
-// Fallback placeholder image data URL
-const placeholderImage = "data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNDAwIiBoZWlnaHQ9IjMwMCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KICA8cmVjdCB3aWR0aD0iMTAwJSIgaGVpZ2h0PSIxMDAlIiBmaWxsPSIjMzMzIi8+CiAgPHRleHQgeD0iNTAlIiB5PSI1MCUiIGZvbnQtZmFtaWx5PSJBcmlhbCwgc2Fucy1zZXJpZiIgZm9udC1zaXplPSIxOCIgZmlsbD0iIzY2NiIgdGV4dC1hbmNob3I9Im1pZGRsZSIgZHk9Ii4zZW0iPkltYWdlIE5vdCBGb3VuZDwvdGV4dD4KPC9zdmc+";
+// Fallback image
+const placeholderImage = "data:image/svg+xml;base64,...";
 
 export default function Projects() {
-  const [hoveredProject, setHoveredProject] = useState(null);
-  const [imageErrors, setImageErrors] = useState({});
+  const [hoveredProject, setHoveredProject] = useState<number | null>(null);
+  const [imageErrors, setImageErrors] = useState<Record<number, boolean>>({});
   const projectsRef = useRef(null);
   const isInView = useInView(projectsRef, { once: true, amount: 0.1 });
+
   const { scrollYProgress } = useScroll({
     target: projectsRef,
     offset: ["start end", "end start"]
   });
-  
+
   const opacity = useTransform(scrollYProgress, [0, 0.2], [0, 1]);
   const y = useTransform(scrollYProgress, [0, 0.2], [100, 0]);
 
@@ -160,7 +161,7 @@ export default function Projects() {
             <motion.div
               key={index}
               variants={itemVariants}
-              onHoverStart={() => setHoveredProject(index as any)}
+              onHoverStart={() => setHoveredProject(index)}
               onHoverEnd={() => setHoveredProject(null)}
               className="relative group"
             >
