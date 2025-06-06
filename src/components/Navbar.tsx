@@ -40,7 +40,7 @@ export default function Navbar() {
           <div className="bg-white/5 border border-white/10 rounded-full px-4 py-2 flex items-center gap-2 shadow-md shadow-white/5 relative z-10">
             <Clock className="text-slate-200 w-4 h-4" />
             <p className="text-xs text-slate-200 font-mono whitespace-nowrap">
-              Last Updated: 28th Feb 2025
+              Last Updated: 20th May 2025
             </p>
           </div>
         </div>
