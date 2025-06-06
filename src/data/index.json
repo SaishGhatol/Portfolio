@@ -1,0 +1,63 @@
+{
+"HERO_CONTENT": "I'm a passionate Full Stack Developer with expertise in building modern web and mobile applications. I love turning complex problems into elegant solutions. I have a strong background in JavaScript, React, Node.js, and various other technologies. My goal is to create user-friendly applications that provide a seamless experience. Let's connect and build something amazing together!",
+  
+"ABOUT_TEXT": "I am a dedicated and versatile full stack developer with a passion for creating efficient and user-friendly web applications. With 5 years of professional experience, I have worked with a variety of technologies, including React, Next.js, Node.js, MySQL, PostgreSQL, and MongoDB. My journey in web development began with a deep curiosity for how things work, and it has evolved into a career where I continuously strive to learn and adapt to new challenges. I thrive in collaborative environments and enjoy solving complex problems to deliver high-quality solutions. Outside of coding, I enjoy staying active, exploring new technologies, and contributing to open-source projects.",
+
+"EXPERIENCES": [],
+
+"PROJECTS": [
+  {
+    "title": "Aarogya -Your Personal AI Health Assistant",
+    "description": "Aarogya is a smart medical chatbot designed to provide reliable health guidance and support. Fine-tuned using the Google Gemini API, Aarogya leverages cutting-edge multimodal AI to understand user queries, process symptoms, and offer contextual health information.",
+    "link":" https://github.com/SaishGhatol/aarogya",
+    "tags": [ "Javascript", "React", "Node.js", "MongoDB","Clerk","Google-gemini"],
+    "image": "https://images.pexels.com/photos/3094799/pexels-photo-3094799.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",  
+      "github": "https://github.com/SaishGhatol/aarogya",
+      "demo": "https://aarogya-lake.vercel.app/",
+          "codeDetails": "https://github.com/saishghatol/aarogya"
+  },
+  {
+    "title": "ChatApp- Real-Time Messaging Platform",
+    "description": "ChatApp is a real-time messaging platform that allows users to send and receive messages instantly. Built with modern web technologies, ChatApp provides a seamless, feature-rich interface for both text and voice communication.",
+    "link": "https://example.com",
+    "tags": ["Javascript", "socket.io", "MongoDB","Socket.io","Node.js","Express","JWT"],
+    "image": "https://images.pexels.com/photos/3094799/pexels-photo-3094799.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2", 
+    "github": "https://github.com/example/repo",
+    "demo": "https://example.com/project1",
+        "codeDetails": "https://example.com/code-details1"
+  },
+  {
+    "title": " StudyMaster- Comprehensive Ed-Tech Platform",
+    "description": "StudyMaster is a comprehensive ed-tech platform designed to deliver interactive, scalable, and personalized online education. Built with modern web technologies, StudyMaster connects instructors and learners through a seamless, feature-rich interface.", 
+    "link": "https://quiz-portal-nu.vercel.app/",
+    "tags": ["Javascript", "Tailwind", "React", "Express", "MongoDB","Node.js","Nodemailer","JWT","Cloudinary"],
+    "image": "https://images.pexels.com/photos/3094799/pexels-photo-3094799.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2", 
+      "github": "https://github.com/SaishGhatol/quiz-portal",
+      "demo": "https://quiz-portal-nu.vercel.app/",
+          "codeDetails": "https://example.com/code-details1"
+  },
+  {
+    "title": " Quiz_Portal- Interactive Assessment Platform",
+    "description": "Quiz Portal is a full-stack application that allows administrators to create and manage quizzes and enables users to browse, take, and review quiz results. Built on the MERN stack, it offers a streamlined experience for both instructors (admins) and learners (users).", 
+    "link": "https://quiz-portal-nu.vercel.app/",
+    "tags": ["HTML", "CSS", "React", "Express", "MongoDB"],
+    "image": "https://images.pexels.com/photos/3094799/pexels-photo-3094799.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2", 
+      "github": "https://github.com/SaishGhatol/quiz-portal",
+      "demo": "https://quiz-portal-nu.vercel.app/",
+          "codeDetails": "https://example.com/code-details1"
+  }
+],
+
+"CONTACT": {
+  "address": "Ayurvedic Layout NIT Complex Sakkardara, Nagpur, Maharashtra, India",
+  "phoneNo": "+91 9673223756 ",
+  "email": "saishghatol100@gmail.com",
+  "email2": "2022bec027@sggs.ac.in",
+  "social": {
+    "github": "https://github.com/username",
+    "linkedin": "https://linkedin.com/in/username",
+    "twitter": "https://twitter.com/username"
+  }
+
+}
+}
