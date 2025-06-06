@@ -2,22 +2,20 @@
 import React, { useState } from "react";
 import { 
   Clock, 
-  Github, 
-  Instagram, 
-  Linkedin, 
   Menu, 
   X,
-  Code2
 } from "lucide-react";
+import Link from "next/link";
 import { SiLeetcode, SiGeeksforgeeks } from "react-icons/si";
 import { motion, AnimatePresence } from "framer-motion";
+import { FaInstagram ,FaGithub, FaLinkedin} from "react-icons/fa";
 
 const socialLinks = [
-{ href: "https://www.linkedin.com/in/saish-ghatol-108402254/", icon: <Linkedin />, label: "LinkedIn" },
-{ href: "https://github.com/SaishGhatol", icon: <Github />, label: "GitHub" },
+{ href: "https://www.linkedin.com/in/saish-ghatol-108402254/", icon: <FaLinkedin />, label: "LinkedIn" },
+{ href: "https://github.com/SaishGhatol", icon: <FaGithub />, label: "GitHub" },
 { href: "https://leetcode.com/saishghatol/", icon: <SiLeetcode />, label: "LeetCode" },
 { href: "https://www.geeksforgeeks.org/user/saishghapvm7/", icon: <SiGeeksforgeeks />, label: "GeeksForGeeks" },
-{ href: "https://www.instagram.com/saish_ghatol/", icon: <Instagram />, label: "Instagram" },
+{ href: "https://www.instagram.com/saish_ghatol/", icon: <FaInstagram />, label: "Instagram" },
 ];
 
 export default function Navbar() {
@@ -27,13 +25,13 @@ export default function Navbar() {
     <nav className="fixed top-0 left-0 right-0 z-50 bg-neutral-900 bg-opacity-90 backdrop-blur-sm flex items-center justify-between py-3 px-4 sm:py-4 sm:px-6 lg:px-8 shadow-md">
       {/* Left Side - Logo */}
       <div className="flex-shrink-0">
-        <a href="/" className="group" aria-label="Home">
+        <Link href="/" className="group" aria-label="Home">
           <h3 className="text-xl sm:text-2xl font-bold text-slate-300 transition-all duration-300 group-hover:text-purple-400">
             <span className="md:hidden">saish</span>
             <span className="hidden md:inline">SaishGhatol</span>
             <span className="text-orange-400 opacity-70 group-hover:opacity-100">.js</span>
           </h3>
-        </a>
+        </Link>
       </div>
 
       {/* Right Side - Desktop */}

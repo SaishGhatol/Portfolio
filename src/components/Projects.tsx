@@ -25,7 +25,7 @@ export default function Projects() {
   const y = useTransform(scrollYProgress, [0, 0.2], [100, 0]);
 
   // Enhanced image mapping with fallbacks
-  const getProjectImage = (projectTitle: string, index: number) => {
+  const getProjectImage = (projectTitle: string) => {
     // First try exact title match
     const imageMap = {
       "Aarogya": aarogyaImage,
@@ -200,7 +200,7 @@ export default function Projects() {
                     </div>
                   ) : (
                     <Image
-                      src={getProjectImage(project.title, index)}
+                      src={getProjectImage(project.title)}
                       alt={`${project.title} project screenshot`}
                       fill
                       sizes="(max-width: 768px) 100vw, 50vw"

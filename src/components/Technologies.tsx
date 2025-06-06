@@ -1,6 +1,6 @@
 "use client"
 
-import React, { useState,useEffect, useRef } from 'react';
+import React, { useState,useEffect } from 'react';
 import { RiReactjsLine } from 'react-icons/ri';
 import { SiMongodb, SiExpress, SiCplusplus, SiJavascript, SiMysql, SiTypescript, SiTailwindcss, SiFirebase } from 'react-icons/si';
 import { TbBrandNextjs } from 'react-icons/tb';
@@ -169,7 +169,7 @@ const Technologies = () => {
               My Tech Stack
             </h3>
             <p className="mt-4 text-neutral-400 max-w-2xl mx-auto">
-              Technologies and tools I've mastered throughout my journey as a developer, 
+              Technologies and tools I have mastered throughout my journey as a developer, 
               enabling me to build robust and scalable applications.
             </p>
           </motion.div>

@@ -47,7 +47,7 @@ export default function Contact() {
         {/* Contact Info */}
         <div className="space-y-8">
           <div>
-            <h3 className="text-xl font-semibold text-white mb-2">Let's Connect</h3>
+            <h3 className="text-xl font-semibold text-white mb-2">Lets Connect</h3>
             <p className="text-neutral-400">
               Feel free to reach out for collaborations, opportunities, or just a friendly chat!
             </p>
