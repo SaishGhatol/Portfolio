@@ -123,7 +123,7 @@ const Hero = () => {
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ delay: 0.9 }}
-                className="pt-8 flex flex-col sm:flex-row gap-4 justify-center"
+                className="pt-8 flex flex-col sm:flex-row gap-4 justify-center items-center w-full"
               >
                 <motion.button
                   onHoverStart={() => setIsHovered(true)}
@@ -131,21 +131,21 @@ const Hero = () => {
                   whileHover={{ scale: 1.05 }}
                   whileTap={{ scale: 0.95 }}
                   onClick={() => window.open('https://drive.google.com/file/d/114D6UxB_KJksNUrIhyAiPXP84KJUupU3/view?usp=sharing', '_blank')}
-                  className="group relative inline-flex h-12 items-center justify-center overflow-hidden rounded-lg bg-gradient-to-br from-purple-600 to-cyan-500 px-6 font-medium text-white shadow-md transition-all duration-300 hover:shadow-lg hover:shadow-purple-500/25"
+                  className="group relative inline-flex h-10 sm:h-12 items-center justify-center overflow-hidden rounded-lg bg-gradient-to-br from-purple-600 to-cyan-500 px-4 sm:px-6 text-sm sm:text-base font-medium text-white shadow-md transition-all duration-300 hover:shadow-lg hover:shadow-purple-500/25 w-[200px] max-w-xs sm:w-auto"
                 >
                   <span className="relative flex items-center gap-2">
                     <FileText 
                       className="transition-transform duration-300 group-hover:rotate-6" 
-                      size={20} 
+                      size={18} 
                     />
-                    View Resume
+                    <span className="whitespace-nowrap">View Resume</span>
                   </span>
-                  <div className="absolute inset-0 flex justify-center [transform:translate3d(100%,0,0)] items-center bg-gradient-to-br from-cyan-500 to-purple-600 transition-transform duration-300 group-hover:[transform:translate3d(0,0,0)]">
+                  <div className="absolute inset-0 flex justify-center [transform:translate3d(100%,0,0)] items-center bg-gradient-to-br from-cyan-500 to-purple-600 transition-transform duration-300 group-hover:[transform:translate3d(0,0,0)] ">
                     <span className="flex items-center gap-2">
-                      Download CV
+                      <span className="whitespace-nowrap">Download CV</span>
                       <Download 
                         className={`${isHovered ? 'animate-bounce' : ''}`} 
-                        size={20} 
+                        size={18} 
                       />
                     </span>
                   </div>
@@ -155,9 +155,9 @@ const Hero = () => {
                   href="#contact"
                   whileHover={{ scale: 1.05 }}
                   whileTap={{ scale: 0.95 }}
-                  className="inline-flex h-12 items-center justify-center rounded-lg border border-gray-700 px-6 font-medium text-gray-300 transition-all duration-300 hover:bg-gray-800 hover:text-white"
+                  className="inline-flex h-10 sm:h-12 items-center justify-center rounded-lg border border-gray-700 px-4 sm:px-6 text-sm sm:text-base font-medium text-gray-300 transition-all duration-300 hover:bg-gray-800 hover:text-white w-[200px] max-w-xs sm:w-auto"
                 >
-                  Contact Me
+                  <span className="whitespace-nowrap">Contact Me</span>
                 </motion.a>
               </motion.div>
             </motion.div>
