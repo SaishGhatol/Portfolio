@@ -27,13 +27,13 @@
         "codeDetails": "https://example.com/code-details1"
   },
   {
-    "title": " StudyMaster- Comprehensive Ed-Tech Platform",
-    "description": "StudyMaster is a comprehensive ed-tech platform designed to deliver interactive, scalable, and personalized online education. Built with modern web technologies, StudyMaster connects instructors and learners through a seamless, feature-rich interface.", 
-    "link": "https://quiz-portal-nu.vercel.app/",
+    "title": " StudyNotion- Comprehensive Ed-Tech Platform",
+    "description": "StudyNotion is a comprehensive ed-tech platform designed to deliver interactive, scalable, and personalized online education. Built with modern web technologies, StudyNotion connects instructors and learners through a seamless, feature-rich interface.", 
+    "link": "https://studynotion-six-pi.vercel.app/",
     "tags": ["Javascript", "Tailwind", "React", "Express", "MongoDB","Node.js","Nodemailer","JWT","Cloudinary"],
     "image": "https://images.pexels.com/photos/3094799/pexels-photo-3094799.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2", 
-      "github": "https://github.com/SaishGhatol/quiz-portal",
-      "demo": "https://quiz-portal-nu.vercel.app/",
+      "github": "https://github.com/SaishGhatol/studynotion",
+      "demo": "https://studynotion-six-pi.vercel.app/",
           "codeDetails": "https://example.com/code-details1"
   },
   {

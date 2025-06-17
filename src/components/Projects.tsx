@@ -7,7 +7,7 @@ import { FaGithub, FaExternalLinkAlt } from "react-icons/fa";
 import aarogyaImage from "@/assets/images/aarogya.png";
 import chatAppImage from "@/assets/images/ChatApp.png";
 import quizPortalImage from "@/assets/images/QuizPortal.png";
-
+import studynotionImage from "@/assets/images/studynotion.png"
 // Fallback image
 const placeholderImage = "data:image/svg+xml;base64,...";
 
@@ -32,6 +32,7 @@ export default function Projects() {
       "Aarogya": aarogyaImage,
       "ChatApp": chatAppImage,
       "Quiz_Portal": quizPortalImage,
+      "StudyNotion":studynotionImage,
     };
     
     let image = imageMap[projectTitle as keyof typeof imageMap];
