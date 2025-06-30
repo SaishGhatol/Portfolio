@@ -45,7 +45,18 @@
       "github": "https://github.com/SaishGhatol/quiz-portal",
       "demo": "https://quiz-portal-nu.vercel.app/",
           "codeDetails": "https://example.com/code-details1"
+  },
+  {
+    "title": "BillSpitter - Smart Bill Splitting App",
+    "description": "BillSpitter is a user-friendly Next.js application that helps groups split bills fairly. Users can input individual names and amounts paid, and the app calculates who owes whom how much so that everyone contributes equally. Perfect for roommates, travel groups, or shared expenses.",
+    "link": "https://billsplitter-virid.vercel.app/",
+    "tags": ["React", "Next.js", "TypeScript", "Tailwind CSS", "Lucide Icons"],
+    "image": "https://images.pexels.com/photos/4386321/pexels-photo-4386321.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
+    "github": "https://github.com/SaishGhatol/billsplitter",
+    "demo": "https://quickbill.vercel.app/",
+    "codeDetails": "https://example.com/code-details-quickbill"
   }
+  
 ],
 
 "CONTACT": {
