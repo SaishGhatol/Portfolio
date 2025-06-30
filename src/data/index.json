@@ -53,7 +53,7 @@
     "tags": ["React", "Next.js", "TypeScript", "Tailwind CSS", "Lucide Icons"],
     "image": "https://images.pexels.com/photos/4386321/pexels-photo-4386321.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
     "github": "https://github.com/SaishGhatol/billsplitter",
-    "demo": "https://quickbill.vercel.app/",
+    "demo": "https://billsplitter-virid.vercel.app/",
     "codeDetails": "https://example.com/code-details-quickbill"
   }
   
