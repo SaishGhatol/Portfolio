@@ -130,7 +130,7 @@ const Hero = () => {
                   onHoverEnd={() => setIsHovered(false)}
                   whileHover={{ scale: 1.05 }}
                   whileTap={{ scale: 0.95 }}
-                  onClick={() => window.open('https://drive.google.com/file/d/114D6UxB_KJksNUrIhyAiPXP84KJUupU3/view?usp=sharing', '_blank')}
+                  onClick={() => window.open(DATA.RESUME_URL, '_blank')}
                   className="group relative inline-flex h-10 sm:h-12 items-center justify-center overflow-hidden rounded-lg bg-gradient-to-br from-purple-600 to-cyan-500 px-4 sm:px-6 text-sm sm:text-base font-medium text-white shadow-md transition-all duration-300 hover:shadow-lg hover:shadow-purple-500/25 w-[200px] max-w-xs sm:w-auto"
                 >
                   <span className="relative flex items-center gap-2">
