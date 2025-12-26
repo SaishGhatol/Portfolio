@@ -22,25 +22,28 @@ export default function OpenSource() {
             transition={{ delay: index * 0.1 }}
             className="group block pl-6 border-l-2 border-neutral-800 hover:border-white transition-all duration-300"
           >
+            {/* Header: Title and Date */}
             <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-2 mb-2">
               <h3 className="text-2xl font-bold text-neutral-200 group-hover:text-white transition-colors">
                 {item.program}
               </h3>
-              <span className="text-xs font-mono text-neutral-600 border border-neutral-800 px-2 py-1 rounded">
+              {/* Fixed: Added w-fit to prevent 100% width and whitespace-nowrap */}
+              <span className="w-fit whitespace-nowrap text-xs font-mono text-neutral-600 border border-neutral-800 px-2 py-1 rounded">
                 {item.date}
               </span>
             </div>
 
+            {/* Role Badge */}
             <div className="flex items-center gap-2 mb-4">
               <span className="text-black bg-white px-2 py-0.5 rounded text-xs font-bold uppercase tracking-wide">
                 {item.role}
               </span>
             </div>
 
+            {/* Description */}
             <p className="text-neutral-500 max-w-2xl leading-relaxed group-hover:text-neutral-400 transition-colors">
               {item.description}
             </p>
-
           </motion.a>
         ))}
       </div>
