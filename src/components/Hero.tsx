@@ -43,7 +43,7 @@ export default function Hero() {
           
           {/* Resume Link */}
           <a 
-            href="https://drive.google.com/file/d/1Pc41-rnvD_4dIOA5o2B8T-3PswRyDFCL/view"
+            href="https://drive.google.com/file/d/1KxrPJYfkqFWHuUgYTRTGDVK2Mb_uqFWY/view?usp=sharing"
             target="_blank"
             rel="noopener noreferrer"
             className="group flex items-center gap-3 text-white text-lg font-medium w-fit"
