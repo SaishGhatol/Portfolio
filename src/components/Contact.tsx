@@ -1,101 +1,98 @@
 "use client";
 import { motion } from "framer-motion";
-import  DATA  from "@/data";
+import DATA from "@/data";
+import { FaArrowRight } from "react-icons/fa";
 
 export default function Contact() {
-  const containerVariants = {
-    hidden: { opacity: 0 },
-    visible: {
-      opacity: 1,
-      transition: {
-        staggerChildren: 0.15,
-        delayChildren: 0.2,
-        when: "beforeChildren",
-      },
-    },
-  };
-
-  const itemVariants = {
-    hidden: { opacity: 0, y: 30, scale: 0.95 },
-    visible: {
-      opacity: 1,
-      y: 0,
-      scale: 1,
-      transition: {
-        type: "spring",
-        stiffness: 120,
-        damping: 15,
-        mass: 0.5,
-      },
-    },
-    hover: { scale: 1.05, x: 5 },
-    tap: { scale: 0.95 },
-  };
-
   return (
-    <motion.div
-      initial="hidden"
-      whileInView="visible"
-      viewport={{ once: true, amount: 0.3 }}
-      variants={containerVariants}
-      className="border-b border-neutral-800 pb-20"
-    >
-      <motion.h2
-        variants={itemVariants}
-        className="text-3xl md:text-4xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-cyan-400 mb-12 md:mb-16 text-center"
+    <section className="flex flex-col justify-center min-h-[70vh] max-w-5xl mx-auto px-6">
+      
+      {/* Header Section */}
+      <motion.div 
+        initial={{ opacity: 0, y: 20 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.5 }}
+        className="mb-20 space-y-6"
       >
-        Get In Touch
-      </motion.h2>
-
-      <motion.div
-        variants={containerVariants}
-        className="text-center tracking-tighter max-w-2xl mx-auto space-y-6"
-      >
-        <motion.p
-          variants={itemVariants}
-          className="my-4 text-neutral-300 hover:text-neutral-100 transition-colors duration-300"
-          whileHover={{ x: 5 }}
-        >
-          {DATA.CONTACT.address}
-        </motion.p>
-
-        <motion.p
-          variants={itemVariants}
-          className="my-4 text-neutral-300 hover:text-neutral-100 transition-colors duration-300"
-          whileHover={{ x: 5 }}
-        >
-          {DATA.CONTACT.phoneNo}
-        </motion.p>
-
-        <motion.div
-          className="flex flex-col gap-4 items-center"
-          variants={containerVariants}
-        >
-          <motion.a
-            href={`mailto:${DATA.CONTACT.email}`}
-            className="text-violet-300 hover:text-violet-200 transition-all duration-300 relative group"
-            variants={itemVariants}
-            whileHover="hover"
-            whileTap="tap"
-            transition={{ type: "spring", stiffness: 300 }}
-          >
-            {DATA.CONTACT.email}
-            <span className="absolute left-0 bottom-0 w-0 h-px bg-violet-400 transition-all duration-300 group-hover:w-full"></span>
-          </motion.a>
-
-          <motion.a
-            href={`mailto:${DATA.CONTACT.email2}`}
-            className="text-violet-300 hover:text-violet-200 transition-all duration-300 relative group"
-            variants={itemVariants}
-            whileHover="hover"
-            whileTap="tap"
-            transition={{ type: "spring", stiffness: 300, delay: 0.1 }}
-          >
-            {DATA.CONTACT.email2}
-            <span className="absolute left-0 bottom-0 w-0 h-px bg-violet-400 transition-all duration-300 group-hover:w-full"></span>
-          </motion.a>
-        </motion.div>
+        <h2 className="text-5xl md:text-7xl font-bold text-white tracking-tighter">
+          Get in touch<span className="text-neutral-600">.</span>
+        </h2>
+        <p className="text-lg text-neutral-500 max-w-xl leading-relaxed">
+          I am always open to discussing new projects, creative ideas, or opportunities to be part of your visions.
+        </p>
       </motion.div>
-    </motion.div>
+
+      {/* Contact Details Grid */}
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-16">
+        
+        {/* Column 1: Primary Email (The Main Action) */}
+        <motion.div 
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ delay: 0.2 }}
+          className="space-y-8"
+        >
+          <div className="space-y-4">
+            <label className="text-xs font-mono text-neutral-500 tracking-widest uppercase border-b border-neutral-800 pb-2 block w-fit">
+              Write to me
+            </label>
+            
+            <a 
+              href={`mailto:${DATA.CONTACT.email}`}
+              className="group flex items-center gap-4 text-2xl md:text-3xl font-medium text-white hover:text-neutral-300 transition-colors"
+            >
+              {DATA.CONTACT.email}
+              <FaArrowRight className="opacity-0 -translate-x-4 group-hover:opacity-100 group-hover:translate-x-0 transition-all duration-300 text-sm" />
+            </a>
+            
+            <a 
+              href={`mailto:${DATA.CONTACT.email2}`}
+              className="block text-xl text-neutral-500 hover:text-white transition-colors"
+            >
+              {DATA.CONTACT.email2}
+            </a>
+          </div>
+        </motion.div>
+
+        {/* Column 2: Phone & Location */}
+        <motion.div 
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ delay: 0.3 }}
+          className="space-y-10"
+        >
+          <div className="space-y-4">
+            <label className="text-xs font-mono text-neutral-500 tracking-widest uppercase border-b border-neutral-800 pb-2 block w-fit">
+              Call Me
+            </label>
+            <p className="text-xl text-neutral-200 font-light tracking-wide">
+              {DATA.CONTACT.phoneNo}
+            </p>
+          </div>
+
+          <div className="space-y-4">
+            <label className="text-xs font-mono text-neutral-500 tracking-widest uppercase border-b border-neutral-800 pb-2 block w-fit">
+              Based In
+            </label>
+            <p className="text-xl text-neutral-200 font-light tracking-wide">
+              {DATA.CONTACT.address}
+            </p>
+          </div>
+        </motion.div>
+      </div>
+
+      {/* Footer / Copyright */}
+      <motion.div 
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        transition={{ delay: 0.6 }}
+        className="mt-auto pt-24 border-t border-neutral-900"
+      >
+        <p className="text-neutral-600 text-sm font-mono">
+          © {new Date().getFullYear()} Saish Ghatol. All Rights Reserved.
+        </p>
+      </motion.div>
+
+    </section>
   );
 }

@@ -1,111 +1,69 @@
 "use client";
 import React from 'react';
-import { RiReactjsLine } from 'react-icons/ri';
-import { SiMongodb, SiExpress, SiCplusplus, SiJavascript, SiMysql}  from 'react-icons/si';
-import { TbBrandNextjs } from 'react-icons/tb';
-import { FaNode } from 'react-icons/fa';
 import { motion } from 'framer-motion';
+import { RiReactjsLine } from 'react-icons/ri';
+import { TbBrandNextjs } from 'react-icons/tb';
+import { 
+  SiMongodb, 
+  SiExpress, 
+  SiCplusplus, 
+  SiJavascript, 
+  SiMysql, 
+  SiTypescript, 
+  SiTailwindcss, 
+  SiFirebase, 
+  SiJenkins, 
+  SiKubernetes 
+} from 'react-icons/si';
+import { FaNode, FaGitAlt, FaDocker } from 'react-icons/fa';
+
+const techStack = [
+  { icon: <RiReactjsLine />, name: "React.js" },
+  { icon: <TbBrandNextjs />, name: "Next.js" },
+  { icon: <SiTypescript />, name: "TypeScript" },
+  { icon: <SiTailwindcss />, name: "Tailwind CSS" },
+  { icon: <SiJavascript />, name: "JavaScript" },
+  { icon: <FaNode />, name: "Node.js" },
+  { icon: <SiExpress />, name: "Express" },
+  { icon: <SiMongodb />, name: "MongoDB" },
+  { icon: <SiMysql />, name: "MySQL" },
+  { icon: <SiCplusplus />, name: "C++" },
+  { icon: <SiFirebase />, name: "Firebase" },
+  { icon: <FaGitAlt />, name: "Git" },
+  { icon: <FaDocker />, name: "Docker" },
+  { icon: <SiJenkins />, name: "Jenkins" },
+  { icon: <SiKubernetes />, name: "Kubernetes" },
+];
 
 const Technologies = () => {
-  const techStack = [
-    {
-      icon: <RiReactjsLine className="text-5xl text-cyan-400" />,
-      name: "React.js",
-      color: "text-cyan-400",
-    },
-    {
-      icon: <TbBrandNextjs className="text-5xl text-white" />,
-      name: "Next.js",
-      color: "text-white",
-    },
-    {
-      icon: <SiMongodb className="text-5xl text-green-400" />,
-      name: "MongoDB",
-      color: "text-green-400",
-    },
-    {
-      icon: <FaNode className="text-5xl text-green-600" />,
-      name: "Node.js",
-      color: "text-green-600",
-    },
-    {
-      icon: <SiExpress className="text-5xl text-gray-400" />,
-      name: "Express",
-      color: "text-gray-400",
-    },
-    {
-      icon: <SiJavascript className="text-5xl text-yellow-400" />,
-      name: "JavaScript",
-      color: "text-yellow-400",
-    },
-    {
-      icon: <SiCplusplus className="text-5xl text-blue-400" />,
-      name: "C++",
-      color: "text-blue-400",
-    },
-    {
-      icon: <SiMysql className="text-5xl text-orange-500" />,
-      name: "MySQL",
-      color: "text-orange-500",
-    },
-  ];
-
-  const containerVariants = {
-    hidden: { opacity: 0 },
-    visible: {
-      opacity: 1,
-      transition: {
-        staggerChildren: 0.1,
-        delayChildren: 0.2,
-      },
-    },
-  };
-
-  const itemVariants = {
-    hidden: { y: 20, opacity: 0 },
-    visible: {
-      y: 0,
-      opacity: 1,
-      transition: { type: 'spring', stiffness: 120 },
-    },
-  };
-
   return (
-    <div className="pb-20 px-4 sm:px-6 lg:px-8">
-      <motion.h2
-        initial={{ opacity: 0, y: 20 }}
-        whileInView={{ opacity: 1, y: 0 }}
-        viewport={{ once: true, amount: 0.5 }}
-        className="my-20 text-center text-4xl font-bold bg-gradient-to-r from-purple-400 to-cyan-400 bg-clip-text text-transparent"
-      >
-        Tech Stack
-      </motion.h2>
+    <div className="pb-20">
+      <div className="border-b border-neutral-800 pb-4 mb-8">
+        <h2 className="text-3xl font-bold text-white tracking-tight">Technologies</h2>
+        <p className="text-neutral-500 mt-2">Tools, frameworks, and DevOps.</p>
+      </div>
 
-      <motion.div
-        variants={containerVariants}
-        initial="hidden"
-        whileInView="visible"
-        viewport={{ once: true, amount: 0.2 }}
-        className="flex flex-wrap justify-center items-center gap-6 max-w-6xl mx-auto"
-      >
-        {techStack.map((tech) => (
+      <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-4">
+        {techStack.map((tech, i) => (
           <motion.div
             key={tech.name}
-            variants={itemVariants}
-            className="group relative bg-neutral-800 p-6 rounded-xl shadow-xl hover:shadow-2xl transition-all duration-300 hover:-translate-y-2"
+            initial={{ opacity: 0, scale: 0.9 }}
+            animate={{ opacity: 1, scale: 1 }}
+            transition={{ delay: i * 0.05 }}
+            className="flex flex-col items-center justify-center p-4 bg-neutral-900/50 border border-neutral-800 rounded-xl hover:bg-neutral-800 hover:border-neutral-600 transition-all duration-300 group cursor-default"
           >
-            <div className="absolute inset-0 rounded-xl bg-gradient-to-r from-purple-400/20 to-cyan-400/20 opacity-0 group-hover:opacity-100 transition-opacity duration-300 -z-10" />
-            <div className="flex flex-col items-center gap-3">
-              <div className={`${tech.color} animate-float`}>
-                {tech.icon}
-              </div>
-              <span className="text-sm font-mono text-gray-300 group-hover:text-white transition-colors">
-                {tech.name}
-              </span>
+            {/* Icon: Lighter gray (400) -> White on hover */}
+            <div className="text-4xl text-neutral-400 group-hover:text-white transition-colors duration-300 mb-3 transform group-hover:scale-110">
+              {tech.icon}
             </div>
+            
+            {/* Label */}
+            <span className="text-xs font-mono text-neutral-400 group-hover:text-neutral-200 transition-colors">
+              {tech.name}
+            </span>
           </motion.div>
         ))}
-      </motion.div>
+      </div>
     </div>
   );
 };

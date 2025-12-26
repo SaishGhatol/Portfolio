@@ -1,119 +1,77 @@
 "use client";
 import { motion } from "framer-motion";
-import DATA from "@/data"; // Assuming your data is in PROJECTS
-import { FaGithub } from "react-icons/fa"; // Import GitHub icon from react-icons
+import DATA from "@/data";
+import { FaGithub, FaExternalLinkAlt } from "react-icons/fa"; // Imported External Link icon
 
 export default function Projects() {
-  const containerVariants = {
-    hidden: { opacity: 0 },
-    visible: {
-      opacity: 1,
-      transition: {
-        staggerChildren: 0.2,
-        delayChildren: 0.3,
-        when: "beforeChildren",
-      },
-    },
-  };
-
-  const itemVariants = {
-    hidden: { opacity: 0, y: 30, scale: 0.95 },
-    visible: {
-      opacity: 1,
-      y: 0,
-      scale: 1,
-      transition: {
-        type: "spring",
-        stiffness: 120,
-        damping: 15,
-        mass: 0.5,
-      },
-    },
-    hover: { scale: 1.05, y: -5 },
-    tap: { scale: 0.95 },
-  };
-
-  const tagVariants = {
-    hidden: { opacity: 0, x: -20 },
-    visible: {
-      opacity: 1,
-      x: 0,
-      transition: { type: "spring", stiffness: 100, damping: 10 },
-    },
-    hover: { scale: 1.1, y: -2 },
-  };
-
   return (
-    <motion.div
-      initial="hidden"
-      whileInView="visible"
-      viewport={{ once: true, amount: 0.3 }}
-      variants={containerVariants}
-      className="border-b border-neutral-800 pb-20"
-    >
-      <motion.h2
-        variants={itemVariants}
-        className="text-3xl md:text-4xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-cyan-400 mb-12 md:mb-16 text-center"
-      >
-        Projects
-      </motion.h2>
+    <div className="py-10">
+      <div className="mb-12">
+        <h2 className="text-4xl font-bold text-white mb-2">Selected Work</h2>
+        <p className="text-neutral-500">A collection of projects and experiments.</p>
+      </div>
 
-      <motion.div
-        variants={containerVariants}
-        className="flex flex-col items-center space-y-8"
-      >
+      <div className="flex flex-col gap-8">
         {DATA.PROJECTS.map((project, index) => (
           <motion.div
             key={index}
-            variants={itemVariants}
-            whileHover="hover"
-            whileTap="tap"
-            className="w-full max-w-[70%] p-6 bg-neutral-900 rounded-lg shadow-lg hover:shadow-xl transition-shadow duration-300 border border-neutral-800 relative"
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ delay: index * 0.1 }}
+            className="group relative border-l-2 border-neutral-800 hover:border-white pl-6 transition-all duration-300"
           >
-            {/* GitHub Icon */}
-            <motion.a
-              href={project.link}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="absolute top-4 right-4 text-neutral-300 hover:text-violet-400 transition-colors duration-300"
-              whileHover={{ scale: 1.1 }}
-              whileTap={{ scale: 0.9 }}
-            >
-              <FaGithub className="w-6 h-6" />
-            </motion.a>
+            <div className="flex flex-col md:flex-row md:items-center justify-between gap-4 mb-2">
+              <h3 className="text-2xl font-semibold text-neutral-300 group-hover:text-white transition-colors">
+                {project.title}
+              </h3>
+              
+              {/* Links Section */}
+              <div className="flex items-center gap-4">
+                {project.demo && (
+                  <a
+                    href={project.demo}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="flex items-center gap-2 text-sm text-neutral-500 hover:text-white transition-colors"
+                    title="Live Demo"
+                  >
+                    <span>Live</span>
+                    <FaExternalLinkAlt size={12} />
+                  </a>
+                )}
+                
+                {project.github && (
+                  <a
+                    href={project.github}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="flex items-center gap-2 text-sm text-neutral-500 hover:text-white transition-colors"
+                    title="View Code"
+                  >
+                    <span>Code</span>
+                    <FaGithub size={16} />
+                  </a>
+                )}
+              </div>
+            </div>
 
-            {/* Project Title */}
-            <motion.h3
-              className="text-2xl font-semibold text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-cyan-400 mb-4"
-            >
-              {project.title}
-            </motion.h3>
-
-            {/* Project Description */}
-            <motion.p
-              className="text-neutral-300 mb-4"
-            >
+            <p className="text-neutral-500 max-w-2xl mb-4 group-hover:text-neutral-400 transition-colors leading-relaxed">
               {project.description}
-            </motion.p>
+            </p>
 
-            {/* Tags */}
-            <motion.div
-              className="flex flex-wrap gap-2 mb-4"
-            >
-              {project.tags.map((tag, tagIndex) => (
-                <motion.span
-                  key={tagIndex}
-                  variants={tagVariants}
-                  whileHover="hover"
-                  className="px-3 py-1 text-sm bg-neutral-800 rounded-full text-neutral-300 cursor-default"
+            <div className="flex flex-wrap gap-2">
+              {project.tags.map((tag, i) => (
+                <span 
+                  key={i} 
+                  className="px-2 py-1 text-xs font-mono bg-neutral-900 text-neutral-500 border border-neutral-800 rounded group-hover:border-neutral-700 transition-colors"
                 >
                   {tag}
-                </motion.span>
+                </span>
               ))}
-            </motion.div>
+            </div>
           </motion.div>
         ))}
-      </motion.div>
-    </motion.div>
+      </div>
+    </div>
   );
 }
