@@ -2,18 +2,41 @@
 @tailwind components;
 @tailwind utilities;
 
-
 :root {
   --font-sans: 'Inter', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
   --font-mono: 'JetBrains Mono', monospace;
 }
 
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
 body {
   font-family: var(--font-sans);
+  background-color: #0a0a0a;
+  color: #e5e5e5;
+  min-height: 100vh;
+  overflow-x: hidden;
 }
 
 .font-mono {
   font-family: var(--font-mono);
+}
+
+/* Custom Scrollbar */
+.scrollbar-hide::-webkit-scrollbar {
+  display: none;
+}
+
+.scrollbar-hide {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
 }
 
 @layer utilities {
