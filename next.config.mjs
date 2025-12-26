@@ -2,7 +2,7 @@
 const nextConfig = {
   // If you had any specific config in your old file, move it here.
   // Otherwise, leave this object empty for now.
-  reactStrictMode: true,
+
 };
 
 export default nextConfig;
