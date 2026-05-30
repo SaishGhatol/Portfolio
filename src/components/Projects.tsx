@@ -1,69 +1,105 @@
 "use client";
 import { motion } from "framer-motion";
+import type { Variants } from "framer-motion";
 import DATA from "@/data";
-import { FaGithub, FaExternalLinkAlt } from "react-icons/fa"; // Imported External Link icon
+import { FaGithub } from "react-icons/fa";
+import { FiArrowUpRight } from "react-icons/fi";
+
+const EASE: [number, number, number, number] = [0.22, 1, 0.36, 1];
+
+const container: Variants = {
+  animate: { transition: { staggerChildren: 0.07 } },
+};
+
+const item: Variants = {
+  initial: { opacity: 0, y: 16 },
+  animate: { opacity: 1, y: 0, transition: { duration: 0.5, ease: EASE } },
+};
+
+const accentColors = [
+  "text-indigo-500",
+  "text-violet-500",
+  "text-sky-500",
+  "text-emerald-500",
+  "text-amber-500",
+];
 
 export default function Projects() {
   return (
-    <div className="py-10">
-      <div className="mb-12">
-        <h2 className="text-4xl font-bold text-white mb-2">Selected Work</h2>
-        <p className="text-neutral-500">A collection of projects and experiments.</p>
-      </div>
+    <div className="py-6 md:py-10">
+      <motion.div
+        initial={{ opacity: 0, y: 10 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.4, ease: EASE }}
+        className="mb-8 md:mb-10"
+      >
+        <h2 className="text-2xl font-bold text-neutral-900 tracking-tight">Selected Work</h2>
+        <p className="text-xs font-mono text-neutral-500 mt-1">{DATA.PROJECTS.length} projects</p>
+      </motion.div>
 
-      <div className="flex flex-col gap-8">
+      <motion.div
+        variants={container}
+        initial="initial"
+        animate="animate"
+        className="space-y-3"
+      >
         {DATA.PROJECTS.map((project, index) => (
           <motion.div
             key={index}
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: index * 0.1 }}
-            className="group relative border-l-2 border-neutral-800 hover:border-white pl-6 transition-all duration-300"
+            variants={item}
+            className="group relative px-4 md:px-5 py-4 rounded-xl border border-neutral-200 bg-white/80 hover:border-indigo-200 hover:shadow-sm transition-all duration-200"
           >
-            <div className="flex flex-col md:flex-row md:items-center justify-between gap-4 mb-2">
-              <h3 className="text-2xl font-semibold text-neutral-300 group-hover:text-white transition-colors">
-                {project.title}
-              </h3>
-              
-              {/* Links Section */}
-              <div className="flex items-center gap-4">
+            {/* Left accent bar on hover */}
+            <div className="absolute left-0 top-3 bottom-3 w-0.5 rounded-r-full bg-indigo-400 opacity-0 group-hover:opacity-100 transition-opacity duration-200" />
+
+            {/* Title row */}
+            <div className="flex items-start justify-between gap-3 mb-2">
+              <div className="flex items-center gap-2.5 min-w-0 flex-1">
+                <span className={`text-[11px] font-mono font-bold tabular-nums shrink-0 ${accentColors[index % accentColors.length]}`}>
+                  {String(index + 1).padStart(2, "0")}
+                </span>
+                <h3 className="text-[14px] font-semibold text-neutral-700 group-hover:text-neutral-900 transition-colors duration-150 truncate">
+                  {project.title}
+                </h3>
+              </div>
+
+              {/* Links — always visible on mobile, hover-only on desktop */}
+              <div className="flex items-center gap-3 shrink-0 md:opacity-0 md:group-hover:opacity-100 transition-opacity duration-200">
                 {project.demo && (
                   <a
                     href={project.demo}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="flex items-center gap-2 text-sm text-neutral-500 hover:text-white transition-colors"
-                    title="Live Demo"
+                    className="flex items-center gap-1 text-[11px] font-mono text-indigo-500 hover:text-indigo-700 transition-colors"
                   >
-                    <span>Live</span>
-                    <FaExternalLinkAlt size={12} />
+                    Live <FiArrowUpRight size={11} />
                   </a>
                 )}
-                
                 {project.github && (
                   <a
                     href={project.github}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="flex items-center gap-2 text-sm text-neutral-500 hover:text-white transition-colors"
-                    title="View Code"
+                    className="text-neutral-500 hover:text-neutral-900 transition-colors"
+                    title="Source"
                   >
-                    <span>Code</span>
-                    <FaGithub size={16} />
+                    <FaGithub size={14} />
                   </a>
                 )}
               </div>
             </div>
 
-            <p className="text-neutral-500 max-w-2xl mb-4 group-hover:text-neutral-400 transition-colors leading-relaxed">
+            {/* Description */}
+            <p className="text-[13px] text-neutral-600 leading-relaxed mb-3 pl-5 md:pl-7">
               {project.description}
             </p>
 
-            <div className="flex flex-wrap gap-2">
+            {/* Tags */}
+            <div className="flex flex-wrap gap-1.5 pl-5 md:pl-7">
               {project.tags.map((tag, i) => (
-                <span 
-                  key={i} 
-                  className="px-2 py-1 text-xs font-mono bg-neutral-900 text-neutral-500 border border-neutral-800 rounded group-hover:border-neutral-700 transition-colors"
+                <span
+                  key={i}
+                  className="px-2 py-0.5 text-[10px] font-mono text-indigo-600 bg-indigo-50 border border-indigo-100 rounded-md"
                 >
                   {tag}
                 </span>
@@ -71,7 +107,7 @@ export default function Projects() {
             </div>
           </motion.div>
         ))}
-      </div>
+      </motion.div>
     </div>
   );
 }

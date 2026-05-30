@@ -1,22 +1,28 @@
 import type { Metadata } from "next";
-
 import "./globals.css";
+
 export const metadata: Metadata = {
-  title: "Saish Ghatol - Portfolio",
-  description: "Full Stack Developer Portfolio",
+  title: "Saish Ghatol — Full Stack Developer",
+  description:
+    "Full Stack Developer specializing in scalable MERN applications, real-time systems, and AI integrations.",
+  keywords: ["Full Stack Developer", "MERN", "React", "Next.js", "Node.js", "Portfolio"],
+  authors: [{ name: "Saish Ghatol" }],
 };
 
 export default function RootLayout({
   children,
-}: Readonly<{
-  children: React.ReactNode;
-}>) {
+}: Readonly<{ children: React.ReactNode }>) {
   return (
     <html lang="en">
       <head>
-        <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600;700&display=swap" rel="stylesheet" />
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
+        <link
+          href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap"
+          rel="stylesheet"
+        />
       </head>
-      <body className="font-sans bg-neutral-950 text-neutral-200 antialiased selection:bg-neutral-700 selection:text-white">
+      <body className="font-sans bg-[#fafafa] text-neutral-900 antialiased">
         {children}
       </body>
     </html>

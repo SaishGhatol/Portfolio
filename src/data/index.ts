@@ -29,9 +29,22 @@ interface Contact {
   email2: string;
 }
 
+interface Experience {
+  company: string;
+  role: string;
+  type: string;
+  duration: string;
+  location: string;
+  project: string;
+  description: string;
+  tags: string[];
+  link: string;
+}
+
 interface Data {
   HERO_CONTENT: string;
   ABOUT_TEXT: string;
+  EXPERIENCE: Experience[];
   PROJECTS: Project[];
   OPEN_SOURCE: OpenSourceWork[];
   CERTIFICATES: Certificate[];
@@ -41,7 +54,34 @@ interface Data {
 const DATA: Data = {
   HERO_CONTENT: "I am a Full Stack Developer with a strong foundation in Data Structures and Algorithms, having solved over 500 problems. I specialize in building scalable web applications using the MERN stack and have experience with real-time socket programming and AI integration. Currently finishing my B.Tech at SGGSIE&T, I am passionate about crafting efficient, user-centric digital solutions.",
   ABOUT_TEXT: "I am a dedicated Full Stack Developer and a B.Tech student in Electronics and Telecommunication at SGGSIE&T, Nanded. With expertise in React, Node.js, and MongoDB, I have developed complex applications ranging from EdTech platforms to Medical AI assistants. My coding journey is backed by a strong grasp of CS fundamentals, demonstrated by solving 500+ DSA problems on LeetCode and GeeksforGeeks.",
-  
+
+  EXPERIENCE: [
+    {
+      company: "SteepGraph Systems Pvt Ltd",
+      role: "Software Developer Intern",
+      type: "Internship",
+      duration: "2025 – Present",
+      location: "Remote",
+      project: "Test Automation Suite — Native",
+      description:
+        "Designed and developed a comprehensive test automation suite for native applications. Built robust test frameworks to streamline QA workflows, improve test coverage, and reduce manual testing effort across the product lifecycle.",
+      tags: ["Test Automation", "Native", "QA", "JavaScript"],
+      link: "#",
+    },
+    {
+      company: "SGGSIE&T, Nanded",
+      role: "B.Tech — Electronics & Telecommunication",
+      type: "Education",
+      duration: "2022 – 2026",
+      location: "Nanded, Maharashtra",
+      project: "Focus: Web Development, DSA, Networking & Embedded Systems",
+      description:
+        "Pursuing a Bachelor's degree with a strong focus on software engineering fundamentals. Active in coding clubs and hackathons, with over 500 DSA problems solved across competitive programming platforms.",
+      tags: ["C++", "DSA", "Web Development", "Networking"],
+      link: "#",
+    },
+  ],
+
   PROJECTS: [
     {
       title: "Quiz Portal",

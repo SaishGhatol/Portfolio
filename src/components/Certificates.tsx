@@ -1,73 +1,75 @@
 "use client";
 import { motion } from "framer-motion";
+import type { Variants } from "framer-motion";
 import DATA from "@/data";
-import { FaArrowRight } from "react-icons/fa";
-import { PiCertificate } from "react-icons/pi";
+import { FiArrowUpRight } from "react-icons/fi";
+
+const EASE: [number, number, number, number] = [0.22, 1, 0.36, 1];
+
+const container: Variants = {
+  animate: { transition: { staggerChildren: 0.08 } },
+};
+
+const row: Variants = {
+  initial: { opacity: 0, y: 14 },
+  animate: { opacity: 1, y: 0, transition: { duration: 0.5, ease: EASE } },
+};
 
 export default function Certificates() {
   return (
-    <section className="py-10 max-w-4xl mx-auto">
-      {/* Header */}
-      <div className="mb-16 space-y-4">
-        <h2 className="text-4xl font-bold text-white tracking-tight">Achievements</h2>
-        <p className="text-neutral-500 font-light text-lg">
-          Credentials, certifications, and milestones.
-        </p>
-        <div className="h-[1px] w-full bg-neutral-900 mt-8" />
-      </div>
+    <section className="py-6 md:py-10">
+      <motion.div
+        initial={{ opacity: 0, y: 10 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.4, ease: EASE }}
+        className="mb-8 md:mb-10"
+      >
+        <h2 className="text-2xl font-bold text-neutral-900 tracking-tight">Achievements</h2>
+        <p className="text-xs font-mono text-neutral-500 mt-1">Credentials, certifications &amp; milestones</p>
+      </motion.div>
 
-      {/* List */}
-      <div className="flex flex-col">
-        {DATA.CERTIFICATES.map((cert, index) => (
-          <motion.div
-            key={index}
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: index * 0.1 }}
-            className="group py-10 border-b border-neutral-900 first:pt-0"
-          >
-            <div className="flex flex-col md:flex-row md:items-start justify-between gap-6">
-              
-              {/* Left Side: Title & Info */}
-              <div className="space-y-3 max-w-2xl">
-                <div className="flex items-center gap-3">
-                  <PiCertificate className="text-neutral-600 text-xl" />
-                  <span className="text-xs font-mono text-neutral-500 uppercase tracking-widest">
+      <motion.div variants={container} initial="initial" animate="animate">
+        {DATA.CERTIFICATES.map((cert, index) => {
+          const hasLink = cert.link && cert.link !== "#";
+          return (
+            <motion.div
+              key={index}
+              variants={row}
+              className="group py-5 border-b border-neutral-100 first:pt-0 last:border-b-0"
+            >
+              <div className="flex flex-col sm:flex-row sm:items-start sm:justify-between gap-3">
+                {/* Left */}
+                <div className="space-y-1.5 min-w-0 flex-1">
+                  <p className="text-[10px] font-mono font-semibold text-indigo-500 tracking-widest uppercase">
                     {cert.issuer}
-                  </span>
+                  </p>
+                  <h3 className="text-[14px] font-semibold text-neutral-800 group-hover:text-neutral-900 transition-colors duration-150 leading-snug">
+                    {cert.title}
+                  </h3>
+                  <p className="text-[12px] text-neutral-600 leading-relaxed">
+                    {cert.description}
+                  </p>
                 </div>
-                
-                <h3 className="text-2xl md:text-3xl font-medium text-white group-hover:text-neutral-300 transition-colors">
-                  {cert.title}
-                </h3>
 
-                <p className="text-neutral-500 leading-relaxed font-light">
-                  {cert.description}
-                </p>
+                {/* Right — inline on mobile, stacked on sm+ */}
+                <div className="flex sm:flex-col items-center sm:items-end justify-between sm:justify-start gap-2 sm:gap-2 shrink-0 min-w-[80px]">
+                  <span className="text-[11px] font-mono text-neutral-500">{cert.date.trim()}</span>
+                  {hasLink && (
+                    <a
+                      href={cert.link}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="flex items-center gap-1 text-[11px] font-mono text-indigo-500 hover:text-indigo-700 sm:opacity-0 sm:group-hover:opacity-100 sm:translate-y-1 sm:group-hover:translate-y-0 transition-all duration-200"
+                    >
+                      View <FiArrowUpRight size={11} />
+                    </a>
+                  )}
+                </div>
               </div>
-
-              {/* Right Side: Date & Link */}
-              <div className="flex flex-row md:flex-col items-center md:items-end justify-between gap-4 min-w-fit">
-                <span className="text-sm font-mono text-neutral-600">
-                  {cert.date}
-                </span>
-
-                {cert.link && cert.link !== "#" && (
-                  <a
-                    href={cert.link}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="flex items-center gap-2 text-white text-sm font-medium opacity-0 -translate-x-4 group-hover:opacity-100 group-hover:translate-x-0 transition-all duration-300"
-                  >
-                    <span>View Credential</span>
-                    <FaArrowRight className="-rotate-45" />
-                  </a>
-                )}
-              </div>
-            </div>
-          </motion.div>
-        ))}
-      </div>
+            </motion.div>
+          );
+        })}
+      </motion.div>
     </section>
   );
 }
